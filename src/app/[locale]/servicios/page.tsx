@@ -1,10 +1,9 @@
 import Header from '@/components/Header';
 import InnerHero from '@/components/InnerHero';
 import Footer from '@/components/Footer';
+import ServicesHubClient from './ServicesHubClient';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
-import { ArrowUpRight } from 'lucide-react';
-import { Link } from '@/i18n/routing';
 
 export async function generateMetadata({
   params
@@ -89,63 +88,13 @@ export default function ServicesHubPage() {
         subtitle={tHub('subtitle')}
       />
 
-      <section className="py-24 bg-slate-50 border-t border-slate-200/70">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          
-          <div className="text-center max-w-3xl mx-auto space-y-3">
-            <span className="text-xs font-bold tracking-widest text-[#247DE1] uppercase font-mono">
-              {tHub('sec_eyebrow')}
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-primary font-black text-slate-900">
-              {tHub('sec_title')} <span className="text-[#247DE1]">{tHub('sec_highlight')}</span>
-            </h2>
-            <p className="text-sm sm:text-base text-gray-600">
-              {tHub('sec_desc')}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {allServices.map((srv) => (
-              <div
-                key={srv.title}
-                className="bg-white border border-slate-200/90 rounded-3xl p-5 shadow-sm hover:shadow-xl hover:border-[#247DE1] transition-all duration-300 group flex flex-col justify-between"
-              >
-                <div className="relative h-52 w-full rounded-2xl overflow-hidden bg-slate-100 mb-5">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img 
-                    src={srv.img} 
-                    alt={`${srv.title} - Servicios Oficiales EXL Group`}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-
-                <div className="space-y-3 flex-1 flex flex-col justify-between">
-                  <div>
-                    <h3 className="text-xl font-bold font-primary text-slate-900 group-hover:text-[#247DE1] transition-colors">
-                      {srv.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 leading-relaxed pt-2">
-                      {srv.desc}
-                    </p>
-                  </div>
-
-                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                    <span className="text-xs font-bold text-[#247DE1] font-mono">{srv.feature}</span>
-                    <Link
-                      href={srv.href}
-                      className="w-9 h-9 rounded-full bg-slate-100 group-hover:bg-[#1E56C8] text-slate-700 group-hover:text-white flex items-center justify-center transition-colors cursor-pointer"
-                      aria-label={srv.title}
-                    >
-                      <ArrowUpRight className="w-4 h-4" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
+      <ServicesHubClient
+        eyebrow={tHub('sec_eyebrow')}
+        title={tHub('sec_title')}
+        highlight={tHub('sec_highlight')}
+        desc={tHub('sec_desc')}
+        services={allServices}
+      />
 
       <Footer />
     </main>

@@ -33,6 +33,25 @@ export default function Hero() {
   };
 
   const titleLine1Words = t('title_l1').split(' ');
+  const titleLine2Words = t('title_l2').split(' ');
+
+  const wordVariants = {
+    hidden: { 
+      opacity: 0, 
+      filter: "blur(10px)", 
+      y: 14 
+    },
+    visible: (i: number) => ({
+      opacity: 1,
+      filter: "blur(0px)",
+      y: 0,
+      transition: {
+        duration: 0.45,
+        delay: 0.12 + i * 0.07,
+        ease: [0.25, 0.4, 0.25, 1] as const
+      }
+    })
+  };
 
   return (
     <section className="relative min-h-[88vh] pt-36 pb-32 lg:pt-48 lg:pb-40 overflow-hidden text-slate-900 flex items-center font-secondary">
@@ -68,9 +87,10 @@ export default function Hero() {
               </span>
             </motion.div>
 
-            {/* 2. Main Headline (Strictly 2 Lines) */}
+            {/* 2. Main Headline (Word by Word Reveal Animation) */}
             <motion.h1 
-              variants={itemVariants}
+              initial="hidden"
+              animate="visible"
               className="text-3xl sm:text-4xl lg:text-[46px] xl:text-[52px] font-primary font-black text-slate-900 tracking-tight leading-[1.15]"
             >
               <span className="block sm:whitespace-nowrap">
@@ -78,17 +98,28 @@ export default function Hero() {
                   const lowerWord = word.toLowerCase();
                   const isHighlight = lowerWord.includes('innovaci') || lowerWord.includes('innovative');
                   return (
-                    <span 
-                      key={idx} 
-                      className={isHighlight ? "text-[#247DE1]" : "text-slate-900"}
+                    <motion.span 
+                      key={idx}
+                      custom={idx}
+                      variants={wordVariants}
+                      className={`inline-block mr-2.5 ${isHighlight ? "text-[#247DE1]" : "text-slate-900"}`}
                     >
-                      {word}{idx < titleLine1Words.length - 1 ? ' ' : ''}
-                    </span>
+                      {word}
+                    </motion.span>
                   );
                 })}
               </span>
-              <span className="block text-slate-900 sm:whitespace-nowrap">
-                {t('title_l2')}
+              <span className="block text-slate-900 sm:whitespace-nowrap mt-1">
+                {titleLine2Words.map((word, idx) => (
+                  <motion.span 
+                    key={idx}
+                    custom={idx + titleLine1Words.length}
+                    variants={wordVariants}
+                    className="inline-block mr-2.5 text-slate-900"
+                  >
+                    {word}
+                  </motion.span>
+                ))}
               </span>
             </motion.h1>
 

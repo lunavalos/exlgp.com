@@ -43,7 +43,7 @@ export default function ServicesSection() {
         if (scrollLeft + clientWidth >= scrollWidth - 15) {
           scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
         } else {
-          scrollRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+          scrollRef.current.scrollBy({ left: clientWidth, behavior: 'smooth' });
         }
       }
     }, 4000);
@@ -53,13 +53,13 @@ export default function ServicesSection() {
 
   const handleScrollLeft = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+      scrollRef.current.scrollBy({ left: -scrollRef.current.clientWidth, behavior: 'smooth' });
     }
   };
 
   const handleScrollRight = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+      scrollRef.current.scrollBy({ left: scrollRef.current.clientWidth, behavior: 'smooth' });
     }
   };
 
@@ -111,7 +111,7 @@ export default function ServicesSection() {
         {/* Mobile Horizontal Carousel & Desktop Grid */}
         <div 
           ref={scrollRef}
-          className="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-none pb-4 md:pb-0"
+          className="flex md:grid md:grid-cols-3 gap-4 sm:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-none pb-4 md:pb-0"
         >
           {indexServices.map((srv, idx) => (
             <motion.div
@@ -120,9 +120,9 @@ export default function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="min-w-[85vw] sm:min-w-[340px] md:min-w-0 bg-white border border-slate-200/90 rounded-3xl p-6 shadow-sm hover:shadow-xl hover:border-[#247DE1] transition-all duration-300 group flex flex-col justify-between snap-start shrink-0 md:shrink"
+              className="w-[calc(100vw-2rem)] sm:w-[calc(100vw-3rem)] md:w-auto min-w-[calc(100vw-2rem)] sm:min-w-[calc(100vw-3rem)] md:min-w-0 max-w-full bg-white border border-slate-200/90 rounded-3xl p-5 sm:p-6 shadow-sm hover:shadow-xl hover:border-[#247DE1] transition-all duration-300 group flex flex-col justify-between snap-center shrink-0 md:shrink"
             >
-              <div className="relative h-48 sm:h-52 w-full rounded-2xl overflow-hidden bg-slate-100 mb-6">
+              <div className="relative h-44 sm:h-52 w-full rounded-2xl overflow-hidden bg-slate-100 mb-4 sm:mb-6">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
                   src={srv.img} 
