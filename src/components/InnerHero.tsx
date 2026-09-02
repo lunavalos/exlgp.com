@@ -10,7 +10,7 @@ interface InnerHeroProps {
 }
 
 export default function InnerHero({
-  category = "CADENA DE SUMINISTRO & ADUANAS",
+  category,
   title,
   highlight,
   subtitle
@@ -80,11 +80,13 @@ export default function InnerHero({
           className="max-w-4xl lg:max-w-5xl space-y-4"
         >
           {/* Eyebrow Category Title */}
-          <motion.div variants={itemVariants} className="block">
-            <span className="text-xs font-bold tracking-widest !text-white uppercase font-mono">
-              {category}
-            </span>
-          </motion.div>
+          {category && (
+            <motion.div variants={itemVariants} className="block">
+              <span className="text-xs font-bold tracking-widest !text-white uppercase font-mono">
+                {category}
+              </span>
+            </motion.div>
+          )}
 
           {/* Main Headline (Word by Word Reveal Animation) */}
           <motion.h1 
