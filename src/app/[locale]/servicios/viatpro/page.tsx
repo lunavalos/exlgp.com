@@ -140,38 +140,19 @@ export default function ViatProIndividualPage() {
         subtitle={t('hero_subtitle')}
       />
 
-      {/* 1. Value Proposition Banner */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-slate-50 border border-slate-200/90 rounded-3xl p-8 lg:p-12 shadow-sm">
-            <div className="max-w-4xl space-y-4">
-              <span className="text-xs font-bold tracking-widest text-[#247DE1] uppercase font-mono">
-                {t('banner_eyebrow')}
-              </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-primary font-black text-slate-900 leading-snug">
-                {t('banner_title')} <span className="text-[#247DE1]">{t('banner_highlight')}</span>
-              </h2>
-              <p className="text-base text-gray-600 leading-relaxed font-normal pt-2">
-                {t('banner_desc')}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 2. Step-by-step Process Engine */}
-      <section className="py-24 bg-slate-50 border-t border-slate-200/80">
+      {/* 1. Step-by-step Process Engine */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <span className="text-xs font-bold tracking-widest text-[#247DE1] uppercase font-mono">
-              {t('sec1_eyebrow')}
+              {t('flow_eyebrow')}
             </span>
             <h2 className="text-3xl sm:text-4xl font-primary font-black text-slate-900">
-              {t('sec1_title')} <span className="text-[#247DE1]">{t('sec1_highlight')}</span>
+              {t('flow_title')} <span className="text-[#247DE1]">{t('flow_highlight')}</span>
             </h2>
             <p className="text-sm sm:text-base text-gray-600">
-              {t('sec1_desc')}
+              {t('flow_desc')}
             </p>
           </div>
 
@@ -181,11 +162,11 @@ export default function ViatProIndividualPage() {
               return (
                 <div 
                   key={idx}
-                  className="bg-white border border-slate-200/90 rounded-3xl p-6 shadow-sm hover:shadow-xl hover:border-[#247DE1] transition-all space-y-4 flex flex-col justify-between"
+                  className="bg-slate-50 border border-slate-200/90 rounded-3xl p-6 shadow-sm hover:shadow-xl hover:border-[#247DE1] transition-all space-y-4 flex flex-col justify-between"
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#0D0E9F] flex items-center justify-center font-bold">
+                      <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 text-[#0D0E9F] flex items-center justify-center font-bold">
                         <Icon className="w-6 h-6" />
                       </div>
                       <span className="text-xs font-mono font-bold text-[#247DE1] bg-blue-50 px-3 py-1 rounded-md">
@@ -209,16 +190,16 @@ export default function ViatProIndividualPage() {
         </div>
       </section>
 
-      {/* 3. Sub-module: ViatPro Track */}
-      <section className="py-24 bg-white border-t border-slate-200/80">
+      {/* 2. Sub-module: ViatPro Track */}
+      <section className="py-24 bg-slate-50 border-t border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <span className="text-xs font-bold tracking-widest text-[#247DE1] uppercase font-mono">
               {t('track_eyebrow')}
             </span>
-            <h2 className="text-3xl sm:text-4xl font-primary font-black text-slate-900">
-              {t('track_title')} <span className="text-[#247DE1]">{t('track_highlight')}</span>
+            <h2 className="text-3xl sm:text-4xl font-primary font-black text-[#0D0E9F]">
+              {t('track_title')} {t('track_highlight')}
             </h2>
             <p className="text-sm sm:text-base text-gray-600">
               {t('track_desc')}
@@ -229,8 +210,8 @@ export default function ViatProIndividualPage() {
             {trackFeatures.map((feat, idx) => {
               const Icon = feat.icon;
               return (
-                <div key={idx} className="bg-slate-50 border border-slate-200/90 rounded-3xl p-6 shadow-sm space-y-3">
-                  <div className="w-10 h-10 rounded-xl bg-white text-[#0D0E9F] border border-slate-200 flex items-center justify-center font-bold">
+                <div key={idx} className="bg-white border border-slate-200/90 rounded-3xl p-6 shadow-sm space-y-3">
+                  <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#0D0E9F] border border-slate-200 flex items-center justify-center font-bold">
                     <Icon className="w-5 h-5" />
                   </div>
                   <h3 className="text-lg font-bold font-primary text-slate-900">{feat.title}</h3>
@@ -266,16 +247,16 @@ export default function ViatProIndividualPage() {
         </div>
       </section>
 
-      {/* 4. Sub-module: ViatPro WMS */}
-      <section className="py-24 bg-slate-50 border-t border-slate-200/80">
+      {/* 3. Sub-module: ViatPro WMS */}
+      <section className="py-24 bg-white border-t border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <span className="text-xs font-bold tracking-widest text-[#247DE1] uppercase font-mono">
               {t('wms_eyebrow')}
             </span>
-            <h2 className="text-3xl sm:text-4xl font-primary font-black text-slate-900">
-              {t('wms_title')} <span className="text-[#247DE1]">{t('wms_highlight')}</span>
+            <h2 className="text-3xl sm:text-4xl font-primary font-black text-[#0D0E9F]">
+              {t('wms_title')} {t('wms_highlight')}
             </h2>
             <p className="text-sm sm:text-base text-gray-600">
               {t('wms_desc')}
@@ -286,8 +267,8 @@ export default function ViatProIndividualPage() {
             {wmsFeatures.map((wms, idx) => {
               const Icon = wms.icon;
               return (
-                <div key={idx} className="bg-white border border-slate-200/90 rounded-3xl p-6 shadow-sm flex items-start gap-5">
-                  <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#0D0E9F] flex items-center justify-center shrink-0 font-bold">
+                <div key={idx} className="bg-slate-50 border border-slate-200/90 rounded-3xl p-6 shadow-sm flex items-start gap-5">
+                  <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 text-[#0D0E9F] flex items-center justify-center shrink-0 font-bold">
                     <Icon className="w-6 h-6" />
                   </div>
                   <div className="space-y-1">
@@ -302,8 +283,8 @@ export default function ViatProIndividualPage() {
         </div>
       </section>
 
-      {/* 5. Mobile App & Demo Call to Action */}
-      <section className="py-24 bg-white border-t border-slate-200/80">
+      {/* 4. Mobile App & Demo Call to Action */}
+      <section className="py-24 bg-slate-50 border-t border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -313,8 +294,8 @@ export default function ViatProIndividualPage() {
               <span className="text-xs font-bold tracking-widest text-[#247DE1] uppercase font-mono">
                 {t('app_eyebrow')}
               </span>
-              <h2 className="text-3xl sm:text-4xl font-primary font-black text-slate-900">
-                {t('app_title')} <span className="text-[#247DE1]">{t('app_highlight')}</span>
+              <h2 className="text-3xl sm:text-4xl font-primary font-black text-[#0D0E9F]">
+                {t('app_title')} {t('app_highlight')}
               </h2>
               <p className="text-base text-gray-600 leading-relaxed font-normal">
                 {t('app_desc')}

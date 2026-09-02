@@ -28,9 +28,9 @@ export default function Industries() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-primary font-black text-slate-900 tracking-tight"
+            className="text-3xl sm:text-4xl lg:text-5xl font-primary font-black text-[#0D0E9F] tracking-tight"
           >
-            Industrias <span className="text-[#247DE1]">Atendidas</span>
+            Industrias Atendidas
           </motion.h2>
 
           <motion.p

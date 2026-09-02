@@ -151,13 +151,13 @@ export default function AgenciaAduanalPage() {
           
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <span className="text-xs font-bold tracking-widest text-[#247DE1] uppercase font-mono">
-              {t('sec2_eyebrow')}
+              {t('ops_eyebrow')}
             </span>
-            <h2 className="text-3xl sm:text-4xl font-primary font-black text-slate-900">
-              {t('sec2_title')} <span className="text-[#247DE1]">{t('sec2_highlight')}</span>
+            <h2 className="text-3xl sm:text-4xl font-primary font-black text-[#0D0E9F]">
+              {t('ops_title')} {t('ops_highlight')}
             </h2>
             <p className="text-sm sm:text-base text-gray-600">
-              {t('sec2_desc')}
+              {t('ops_desc')}
             </p>
           </div>
 

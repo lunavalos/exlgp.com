@@ -165,8 +165,8 @@ export default function NosotrosPage() {
             <span className="text-xs font-bold tracking-widest text-[#247DE1] uppercase font-mono">
               {t('sec1_eyebrow')}
             </span>
-            <h2 className="text-3xl sm:text-4xl font-primary font-black text-slate-900">
-              {t('sec1_title')} <span className="text-[#247DE1]">{t('sec1_highlight')}</span>
+            <h2 className="text-3xl sm:text-4xl font-primary font-black text-[#0D0E9F]">
+              {t('sec1_title')} {t('sec1_highlight')}
             </h2>
             <p className="text-sm sm:text-base text-gray-600">
               {t('sec1_desc')}
@@ -227,8 +227,8 @@ export default function NosotrosPage() {
             <span className="text-xs font-bold tracking-widest text-[#247DE1] uppercase font-mono">
               {t('sec2_eyebrow')}
             </span>
-            <h2 className="text-3xl sm:text-4xl font-primary font-black text-slate-900">
-              {t('sec2_title')} <span className="text-[#247DE1]">{t('sec2_highlight')}</span>
+            <h2 className="text-3xl sm:text-4xl font-primary font-black text-[#0D0E9F]">
+              {t('sec2_title')} {t('sec2_highlight')}
             </h2>
           </div>
 
@@ -266,8 +266,8 @@ export default function NosotrosPage() {
             <span className="text-xs font-bold tracking-widest text-[#247DE1] uppercase font-mono">
               {t('locations_eyebrow')}
             </span>
-            <h2 className="text-3xl sm:text-4xl font-primary font-black text-slate-900">
-              {t('locations_title')} <span className="text-[#247DE1]">{t('locations_highlight')}</span>
+            <h2 className="text-3xl sm:text-4xl font-primary font-black text-[#0D0E9F]">
+              {t('locations_title')} {t('locations_highlight')}
             </h2>
           </div>
 

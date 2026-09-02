@@ -158,8 +158,8 @@ export default function SeguridadEnviosPage() {
             <span className="text-xs font-bold tracking-widest text-[#247DE1] uppercase font-mono">
               {t('sec2_eyebrow')}
             </span>
-            <h2 className="text-3xl sm:text-4xl font-primary font-black text-slate-900">
-              {t('sec2_title')} <span className="text-[#247DE1]">{t('sec2_highlight')}</span>
+            <h2 className="text-3xl sm:text-4xl font-primary font-black text-[#0D0E9F]">
+              {t('sec2_title')} {t('sec2_highlight')}
             </h2>
             <p className="text-sm sm:text-base text-gray-600">
               {t('sec2_desc')}

@@ -29,9 +29,9 @@ export default function Certifications() {
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-primary font-black text-slate-900 tracking-tight"
+            className="text-3xl sm:text-4xl lg:text-5xl font-primary font-black text-[#0D0E9F] tracking-tight"
           >
-            {t('title')} <span className="text-[#247DE1]">{t('highlight')}</span>
+            {t('title')} {t('highlight')}
           </motion.h2>
 
           <p className="text-sm md:text-base text-gray-600 font-normal">
