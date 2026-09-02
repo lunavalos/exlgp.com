@@ -2,8 +2,39 @@ import Header from '@/components/Header';
 import InnerHero from '@/components/InnerHero';
 import Footer from '@/components/Footer';
 import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { ArrowUpRight } from 'lucide-react';
 import { Link } from '@/i18n/routing';
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{locale: string}>;
+}) {
+  const {locale} = await params;
+  const t = await getTranslations({locale, namespace: 'SEO'});
+
+  return {
+    title: t('services_title'),
+    description: t('services_desc'),
+    keywords: t('services_keywords'),
+    alternates: {
+      canonical: `https://www.exlgp.com/${locale}/servicios`,
+      languages: {
+        'es': 'https://www.exlgp.com/es/servicios',
+        'en': 'https://www.exlgp.com/en/servicios',
+      }
+    },
+    openGraph: {
+      title: t('services_title'),
+      description: t('services_desc'),
+      url: `https://www.exlgp.com/${locale}/servicios`,
+      siteName: 'EXL Group',
+      locale: locale === 'es' ? 'es_MX' : 'en_US',
+      type: 'website',
+    },
+  };
+}
 
 export default function ServicesHubPage() {
   const tServices = useTranslations('Services');
@@ -83,7 +114,7 @@ export default function ServicesHubPage() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img 
                     src={srv.img} 
-                    alt={srv.title}
+                    alt={`${srv.title} - Servicios Oficiales EXL Group`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
@@ -98,18 +129,14 @@ export default function ServicesHubPage() {
                     </p>
                   </div>
 
-                  {/* Plain Text Feature Tag + Plain Text Link */}
-                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-3">
-                    <span className="text-xs font-bold font-mono text-[#247DE1] uppercase tracking-wider">
-                      {srv.feature}
-                    </span>
-
+                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <span className="text-xs font-bold text-[#247DE1] font-mono">{srv.feature}</span>
                     <Link
                       href={srv.href}
-                      className="text-xs font-bold text-[#1E56C8] hover:text-[#0D0E9F] inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-all cursor-pointer font-secondary"
+                      className="w-9 h-9 rounded-full bg-slate-100 group-hover:bg-[#1E56C8] text-slate-700 group-hover:text-white flex items-center justify-center transition-colors cursor-pointer"
+                      aria-label={srv.title}
                     >
-                      <span>{tServices('btn_more')}</span>
-                      <ArrowUpRight className="w-3.5 h-3.5 text-[#1E56C8]" />
+                      <ArrowUpRight className="w-4 h-4" />
                     </Link>
                   </div>
                 </div>

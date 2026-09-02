@@ -8,12 +8,12 @@ export default function Certifications() {
 
   // Exact 6 remaining valid certification images in folder
   const certImages = [
-    { src: "/images/certifications/01-1.jpg", alt: "Certificación 1" },
-    { src: "/images/certifications/02.jpg", alt: "Certificación 2" },
-    { src: "/images/certifications/03.jpg", alt: "Certificación 3" },
-    { src: "/images/certifications/04.jpg", alt: "Certificación 4" },
-    { src: "/images/certifications/06.jpg", alt: "Certificación 6" },
-    { src: "/images/certifications/07.jpg", alt: "Certificación 7" },
+    { src: "/images/certifications/01-1.jpg", alt: "Certificación de Gestión de Calidad Aduanal ISO - EXL Group" },
+    { src: "/images/certifications/02.jpg", alt: "Certificación de Seguridad en la Cadena de Suministro C-TPAT - EXL Group" },
+    { src: "/images/certifications/03.jpg", alt: "Acreditación de Operador Económico Autorizado OEA - EXL Group" },
+    { src: "/images/certifications/04.jpg", alt: "Certificación de Cumplimiento y Procesos Aduanales - EXL Group" },
+    { src: "/images/certifications/06.jpg", alt: "Certificación de Estándares Internacionales de Seguridad ISO 17712 - EXL Group" },
+    { src: "/images/certifications/07.jpg", alt: "Asociación y Membresía de Comercio Exterior - EXL Group" },
   ];
 
   // Duplicated array for seamless infinite marquee scrolling

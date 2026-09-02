@@ -2,13 +2,44 @@ import Header from '@/components/Header';
 import InnerHero from '@/components/InnerHero';
 import Footer from '@/components/Footer';
 import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { 
   FileText, Bell, Truck, ShieldCheck, CheckCircle2, 
   Monitor, Users, Navigation, MapPin, 
   AlertTriangle, Shield, Warehouse, Camera, 
-  BarChart2, Download, ArrowRight
+  BarChart2, ArrowRight
 } from 'lucide-react';
 import { Link } from '@/i18n/routing';
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{locale: string}>;
+}) {
+  const {locale} = await params;
+  const t = await getTranslations({locale, namespace: 'SEO'});
+
+  return {
+    title: t('viatpro_title'),
+    description: t('viatpro_desc'),
+    keywords: t('viatpro_keywords'),
+    alternates: {
+      canonical: `https://www.exlgp.com/${locale}/servicios/viatpro`,
+      languages: {
+        'es': 'https://www.exlgp.com/es/servicios/viatpro',
+        'en': 'https://www.exlgp.com/en/servicios/viatpro',
+      }
+    },
+    openGraph: {
+      title: t('viatpro_title'),
+      description: t('viatpro_desc'),
+      url: `https://www.exlgp.com/${locale}/servicios/viatpro`,
+      siteName: 'EXL Group',
+      locale: locale === 'es' ? 'es_MX' : 'en_US',
+      type: 'website',
+    },
+  };
+}
 
 export default function ViatProIndividualPage() {
   const t = useTranslations('ViatProPage');
@@ -92,7 +123,7 @@ export default function ViatProIndividualPage() {
       desc: t('w3_desc')
     },
     {
-      icon: ShieldCheck,
+      icon: Users,
       title: t('w4_title'),
       desc: t('w4_desc')
     }
@@ -109,72 +140,38 @@ export default function ViatProIndividualPage() {
         subtitle={t('hero_subtitle')}
       />
 
-      {/* 1. Overview Section: Single Screen & EDI */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            {/* Left Image Wrapper */}
-            <div className="lg:col-span-6 bg-white border border-slate-200/90 rounded-3xl p-6 shadow-sm">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img 
-                src="/images/viatprotrack.png" 
-                alt="ViatPro Interface"
-                className="w-full h-auto rounded-xl object-cover"
-              />
-            </div>
-
-            {/* Right Text */}
-            <div className="lg:col-span-6 space-y-6">
+      {/* 1. Value Proposition Banner */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-slate-50 border border-slate-200/90 rounded-3xl p-8 lg:p-12 shadow-sm">
+            <div className="max-w-4xl space-y-4">
               <span className="text-xs font-bold tracking-widest text-[#247DE1] uppercase font-mono">
-                {t('single_screen_eyebrow')}
+                {t('banner_eyebrow')}
               </span>
-              <h2 className="text-3xl sm:text-4xl font-primary font-black text-slate-900">
-                {t('single_screen_title')} <span className="text-[#247DE1]">(Single Screen)</span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-primary font-black text-slate-900 leading-snug">
+                {t('banner_title')} <span className="text-[#247DE1]">{t('banner_highlight')}</span>
               </h2>
-              <p className="text-base text-gray-600 leading-relaxed font-normal">
-                {t('single_screen_desc')}
+              <p className="text-base text-gray-600 leading-relaxed font-normal pt-2">
+                {t('banner_desc')}
               </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                <div className="p-4 bg-slate-50 border border-slate-200/80 rounded-2xl flex items-start gap-3">
-                  <Monitor className="w-6 h-6 text-[#247DE1] shrink-0 mt-1" />
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-900">{t('edi_title')}</h4>
-                    <p className="text-xs text-gray-500">{t('edi_desc')}</p>
-                  </div>
-                </div>
-
-                <div className="p-4 bg-slate-50 border border-slate-200/80 rounded-2xl flex items-start gap-3">
-                  <Users className="w-6 h-6 text-[#0D0E9F] shrink-0 mt-1" />
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-900">{t('profiles_title')}</h4>
-                    <p className="text-xs text-gray-500">{t('profiles_desc')}</p>
-                  </div>
-                </div>
-              </div>
-
             </div>
-
           </div>
-
         </div>
       </section>
 
-      {/* 2. Operational 6-Step Flow */}
+      {/* 2. Step-by-step Process Engine */}
       <section className="py-24 bg-slate-50 border-t border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <span className="text-xs font-bold tracking-widest text-[#247DE1] uppercase font-mono">
-              {t('flow_eyebrow')}
+              {t('sec1_eyebrow')}
             </span>
             <h2 className="text-3xl sm:text-4xl font-primary font-black text-slate-900">
-              {t('flow_title')} <span className="text-[#247DE1]">{t('flow_highlight')}</span>
+              {t('sec1_title')} <span className="text-[#247DE1]">{t('sec1_highlight')}</span>
             </h2>
             <p className="text-sm sm:text-base text-gray-600">
-              {t('flow_desc')}
+              {t('sec1_desc')}
             </p>
           </div>
 
@@ -246,7 +243,7 @@ export default function ViatProIndividualPage() {
           {/* C-TPAT Banner */}
           <div className="p-8 lg:p-10 bg-[#08094d] text-white rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
             <div className="space-y-2">
-              <div className="flex items-center gap-2 text-[#247DE1] font-mono text-xs font-bold uppercase">
+              <div className="flex items-center gap-2 text-sky-400 font-mono text-xs font-bold uppercase">
                 <Shield className="w-4 h-4" />
                 <span>{t('ctpat_eyebrow')}</span>
               </div>
@@ -322,23 +319,11 @@ export default function ViatProIndividualPage() {
               <p className="text-base text-gray-600 leading-relaxed font-normal">
                 {t('app_desc')}
               </p>
-
-              <div className="pt-4 flex items-center gap-4">
-                <a 
-                  href="https://www.exlgp.com/s/viatpro.apk"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-[#1E56C8] hover:bg-[#1643a3] text-white px-6 py-3.5 rounded-lg text-xs font-bold shadow-md hover:shadow-lg transition-all inline-flex items-center gap-2 cursor-pointer"
-                >
-                  <Download className="w-4 h-4" />
-                  <span>{t('app_btn')}</span>
-                </a>
-              </div>
             </div>
 
             {/* Right Request Demo Card */}
             <div className="lg:col-span-5 bg-gradient-to-br from-[#0D0E9F] to-[#08094d] text-white p-8 lg:p-10 rounded-3xl shadow-xl space-y-6">
-              <span className="text-xs font-mono font-bold text-[#247DE1] uppercase tracking-widest">
+              <span className="text-xs font-mono font-bold text-sky-400 uppercase tracking-widest">
                 {t('demo_eyebrow')}
               </span>
               <h3 className="text-2xl sm:text-3xl font-primary font-black !text-white">

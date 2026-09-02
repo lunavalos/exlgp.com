@@ -2,7 +2,38 @@ import Header from '@/components/Header';
 import InnerHero from '@/components/InnerHero';
 import Footer from '@/components/Footer';
 import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { Warehouse, RefreshCw, Archive, ShieldCheck, Clock, Users, Factory } from 'lucide-react';
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{locale: string}>;
+}) {
+  const {locale} = await params;
+  const t = await getTranslations({locale, namespace: 'SEO'});
+
+  return {
+    title: t('warehousing_title'),
+    description: t('warehousing_desc'),
+    keywords: t('warehousing_keywords'),
+    alternates: {
+      canonical: `https://www.exlgp.com/${locale}/servicios/reenvio-y-almacenamiento`,
+      languages: {
+        'es': 'https://www.exlgp.com/es/servicios/reenvio-y-almacenamiento',
+        'en': 'https://www.exlgp.com/en/servicios/reenvio-y-almacenamiento',
+      }
+    },
+    openGraph: {
+      title: t('warehousing_title'),
+      description: t('warehousing_desc'),
+      url: `https://www.exlgp.com/${locale}/servicios/reenvio-y-almacenamiento`,
+      siteName: 'EXL Group',
+      locale: locale === 'es' ? 'es_MX' : 'en_US',
+      type: 'website',
+    },
+  };
+}
 
 export default function ReenvioAlmacenamientoPage() {
   const t = useTranslations('WarehousingPage');

@@ -1,20 +1,43 @@
-"use client";
-
 import Header from '@/components/Header';
 import InnerHero from '@/components/InnerHero';
 import Footer from '@/components/Footer';
+import ContactForm from '@/components/ContactForm';
 import { useTranslations } from 'next-intl';
-import { Phone, Mail, MapPin, Send, CheckCircle2 } from 'lucide-react';
-import { useState, FormEvent } from 'react';
+import { getTranslations } from 'next-intl/server';
+import { Phone, Mail, MapPin } from 'lucide-react';
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{locale: string}>;
+}) {
+  const {locale} = await params;
+  const t = await getTranslations({locale, namespace: 'SEO'});
+
+  return {
+    title: t('contact_title'),
+    description: t('contact_desc'),
+    keywords: t('contact_keywords'),
+    alternates: {
+      canonical: `https://www.exlgp.com/${locale}/contacto`,
+      languages: {
+        'es': 'https://www.exlgp.com/es/contacto',
+        'en': 'https://www.exlgp.com/en/contacto',
+      }
+    },
+    openGraph: {
+      title: t('contact_title'),
+      description: t('contact_desc'),
+      url: `https://www.exlgp.com/${locale}/contacto`,
+      siteName: 'EXL Group',
+      locale: locale === 'es' ? 'es_MX' : 'en_US',
+      type: 'website',
+    },
+  };
+}
 
 export default function ContactoPage() {
   const t = useTranslations('ContactPage');
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
 
   return (
     <main className="min-h-screen bg-white text-slate-800 flex flex-col font-secondary">
@@ -34,9 +57,9 @@ export default function ContactoPage() {
             
             {/* Contact Info Cards */}
             <div className="lg:col-span-5 space-y-6">
-              
+
               <div className="bg-white border border-slate-200/90 rounded-2xl p-6 shadow-xs flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#0D0E9F] flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#0D0E9F] flex items-center justify-center shrink-0 font-bold">
                   <Phone className="w-6 h-6" />
                 </div>
                 <div>
@@ -46,7 +69,7 @@ export default function ContactoPage() {
               </div>
 
               <div className="bg-white border border-slate-200/90 rounded-2xl p-6 shadow-xs flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#0D0E9F] flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#0D0E9F] flex items-center justify-center shrink-0 font-bold">
                   <Phone className="w-6 h-6" />
                 </div>
                 <div>
@@ -56,7 +79,7 @@ export default function ContactoPage() {
               </div>
 
               <div className="bg-white border border-slate-200/90 rounded-2xl p-6 shadow-xs flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#0D0E9F] flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#0D0E9F] flex items-center justify-center shrink-0 font-bold">
                   <Mail className="w-6 h-6" />
                 </div>
                 <div>
@@ -66,7 +89,7 @@ export default function ContactoPage() {
               </div>
 
               <div className="bg-white border border-slate-200/90 rounded-2xl p-6 shadow-xs flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#0D0E9F] flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#0D0E9F] flex items-center justify-center shrink-0 font-bold">
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div>
@@ -76,72 +99,9 @@ export default function ContactoPage() {
 
             </div>
 
-            {/* Interactive Contact Form */}
+            {/* Interactive Contact Form Component */}
             <div className="lg:col-span-7">
-              <div className="bg-white border border-slate-200/90 rounded-3xl p-8 lg:p-10 shadow-lg">
-                
-                {submitted ? (
-                  <div className="text-center py-12 space-y-4">
-                    <CheckCircle2 className="w-16 h-16 text-emerald-600 mx-auto" />
-                    <p className="text-sm text-gray-600 max-w-md mx-auto">{t('success_msg')}</p>
-                    <button 
-                      onClick={() => setSubmitted(false)}
-                      className="bg-[#1E56C8] text-white px-6 py-2.5 rounded-lg text-xs font-bold shadow-xs hover:bg-[#1643a3] transition-all mt-4"
-                    >
-                      OK
-                    </button>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6 font-secondary">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">{t('form_name')}</label>
-                        <input required type="text" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#247DE1]" />
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">{t('form_company')}</label>
-                        <input required type="text" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#247DE1]" />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">{t('form_email')}</label>
-                        <input required type="email" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#247DE1]" />
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">{t('form_phone')}</label>
-                        <input required type="tel" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#247DE1]" />
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">{t('form_service')}</label>
-                      <select className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#247DE1]">
-                        <option>ViatPro 3.0</option>
-                        <option>Agencia Aduanal</option>
-                        <option>Distribución y Logística</option>
-                        <option>Reenvío y Almacenamiento</option>
-                        <option>Seguridad de Envíos</option>
-                      </select>
-                    </div>
-
-                    <div className="space-y-2">
-                      <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">{t('form_message')}</label>
-                      <textarea required rows={4} className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#247DE1]"></textarea>
-                    </div>
-
-                    <button
-                      type="submit"
-                      className="w-full bg-[#1E56C8] hover:bg-[#1643a3] text-white py-4 rounded-xl text-xs font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer"
-                    >
-                      <span>{t('form_submit')}</span>
-                      <Send className="w-4 h-4" />
-                    </button>
-                  </form>
-                )}
-
-              </div>
+              <ContactForm />
             </div>
 
           </div>

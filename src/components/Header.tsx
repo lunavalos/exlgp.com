@@ -34,7 +34,7 @@ export default function Header() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img 
               src="/images/logo.png" 
-              alt="EXL Group" 
+              alt="EXL Group - Soluciones de Innovación en Procesos Aduanales" 
               className="h-10 w-auto object-contain"
             />
           </Link>

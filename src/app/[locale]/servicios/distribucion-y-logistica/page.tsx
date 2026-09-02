@@ -2,7 +2,38 @@ import Header from '@/components/Header';
 import InnerHero from '@/components/InnerHero';
 import Footer from '@/components/Footer';
 import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { Truck, ArrowLeftRight, Navigation, Camera, FileSpreadsheet, Lock, ShieldCheck, CheckCircle2 } from 'lucide-react';
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{locale: string}>;
+}) {
+  const {locale} = await params;
+  const t = await getTranslations({locale, namespace: 'SEO'});
+
+  return {
+    title: t('logistics_title'),
+    description: t('logistics_desc'),
+    keywords: t('logistics_keywords'),
+    alternates: {
+      canonical: `https://www.exlgp.com/${locale}/servicios/distribucion-y-logistica`,
+      languages: {
+        'es': 'https://www.exlgp.com/es/servicios/distribucion-y-logistica',
+        'en': 'https://www.exlgp.com/en/servicios/distribucion-y-logistica',
+      }
+    },
+    openGraph: {
+      title: t('logistics_title'),
+      description: t('logistics_desc'),
+      url: `https://www.exlgp.com/${locale}/servicios/distribucion-y-logistica`,
+      siteName: 'EXL Group',
+      locale: locale === 'es' ? 'es_MX' : 'en_US',
+      type: 'website',
+    },
+  };
+}
 
 export default function DistribucionLogisticaPage() {
   const t = useTranslations('LogisticsPage');
@@ -80,7 +111,7 @@ export default function DistribucionLogisticaPage() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 
                 src="/images/distribucion-y-logistica.jpg" 
-                alt="Distribución y Logística EXL Group"
+                alt="Flotilla de Distribución y Logística Transfronteriza - EXL Group"
                 className="w-full h-[480px] object-cover opacity-90 hover:scale-105 transition-transform duration-700"
               />
             </div>
@@ -145,7 +176,7 @@ export default function DistribucionLogisticaPage() {
                 <div className="w-12 h-12 rounded-2xl bg-[#247DE1] text-white flex items-center justify-center">
                   <Lock className="w-6 h-6" />
                 </div>
-                <span className="text-[11px] font-mono font-bold text-[#247DE1] uppercase tracking-wider block">
+                <span className="text-xs font-mono font-bold text-sky-400 uppercase tracking-wider block">
                   {t('seal_eyebrow')}
                 </span>
                 <h3 className="text-2xl lg:text-3xl font-primary font-black !text-white leading-tight">

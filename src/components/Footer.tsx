@@ -23,7 +23,7 @@ export default function Footer() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 
                 src="/images/logo.png" 
-                alt="EXL Group" 
+                alt="EXL Group - Soluciones de Innovación en Procesos Aduanales" 
                 className="h-9 w-auto filter brightness-0 invert"
               />
             </div>

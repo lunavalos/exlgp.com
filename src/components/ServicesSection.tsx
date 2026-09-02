@@ -126,7 +126,7 @@ export default function ServicesSection() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
                   src={srv.img} 
-                  alt={srv.title}
+                  alt={`${srv.title} - Servicios Oficiales de EXL Group`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>

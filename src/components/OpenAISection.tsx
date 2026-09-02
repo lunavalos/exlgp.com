@@ -62,7 +62,7 @@ export default function OpenAISection() {
       y: 0,
       scale: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 90,
         damping: 16
       }

@@ -85,7 +85,7 @@ export default function AboutWhatWeDo() {
                 <Cpu className="w-5 h-5" />
               </div>
               <div className="space-y-1">
-                <span className="text-[10px] font-mono font-bold tracking-widest uppercase text-[#247DE1] block mb-1">
+                <span className="text-xs font-mono font-bold tracking-widest uppercase text-sky-400 block mb-1">
                   {t('card3_eyebrow')}
                 </span>
                 <h3 className="text-xl font-bold font-primary !text-white">
@@ -106,7 +106,7 @@ export default function AboutWhatWeDo() {
               className="sm:col-span-2 bg-[#0D0E9F] text-white rounded-3xl p-8 lg:p-10 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6"
             >
               <div className="space-y-2">
-                <span className="text-[11px] font-mono font-bold tracking-widest uppercase text-[#247DE1] block">
+                <span className="text-xs font-mono font-bold tracking-widest uppercase text-sky-400 block">
                   {t('card4_eyebrow')}
                 </span>
                 <h3 className="text-base sm:text-lg font-bold font-primary !text-white leading-snug max-w-md">
