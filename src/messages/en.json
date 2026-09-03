@@ -9,13 +9,17 @@
     "nav_resources": "Resources",
     "nav_contact": "Contact",
     "contact_btn": "Contact Us",
-    "lang_label": "Language / Idioma"
+    "lang_label": "Language / Idioma",
+    "srv_customs": "Customs Agency",
+    "srv_logistics": "Distribution & Logistics",
+    "srv_warehousing": "Forwarding & Warehousing",
+    "srv_security": "Shipment Security"
   },
   "Hero": {
     "badge": "EXL GROUP • SUPPLY CHAIN & CUSTOMS PROCESSES",
     "title_l1": "Innovative Solutions",
     "title_l2": "in Customs Processes.",
-    "description": "ViatPro is the comprehensive automated system where customs brokers, freight forwarders, and exporters streamline their operations intuitively and securely.",
+    "description": "At EXL Group we deliver comprehensive solutions and advanced technology for customs brokers, carriers, and exporters to streamline their operations intuitively and securely.",
     "cta_primary": "Explore Platform",
     "cta_secondary": "Contact Us Now",
     "announcement_title": "End-to-End Customs Automation",
@@ -499,6 +503,7 @@
     "link_privacy": "Privacy Policy",
     "link_disclaimer": "Legal Disclaimer",
     "link_ethics": "Code of Ethics and Conduct",
-    "rights": "© 2026 EXL Group / ViatPro. All rights reserved."
+    "rights": "© 2026 EXL Group / ViatPro. All rights reserved.",
+    "developed_by": "DEVELOPED BY:"
   }
 }

@@ -64,16 +64,16 @@ export default function Header() {
                   ViatPro 3.0
                 </Link>
                 <Link href="/servicios/agencia-aduanal" className="block px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-[#247DE1] transition-colors">
-                  Agencia Aduanal
+                  {t('srv_customs')}
                 </Link>
                 <Link href="/servicios/distribucion-y-logistica" className="block px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-[#247DE1] transition-colors">
-                  Distribución y Logística
+                  {t('srv_logistics')}
                 </Link>
                 <Link href="/servicios/reenvio-y-almacenamiento" className="block px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-[#247DE1] transition-colors">
-                  Reenvío y Almacenamiento
+                  {t('srv_warehousing')}
                 </Link>
                 <Link href="/servicios/seguridad-de-envios" className="block px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-[#247DE1] transition-colors">
-                  Seguridad de Envíos
+                  {t('srv_security')}
                 </Link>
               </div>
             </div>
@@ -96,7 +96,7 @@ export default function Header() {
           {/* Right Action Bar */}
           <div className="flex items-center gap-3">
             
-            {/* Language Switcher Dropdown (Click Activated - Uses useLocale() for true active locale) */}
+            {/* Language Switcher Dropdown */}
             <div className="relative" ref={langDropdownRef}>
               <button 
                 onClick={() => setLangDropdownOpen(!langDropdownOpen)}
@@ -151,11 +151,11 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Drawer (First Level Menu with Translated Items) */}
+      {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3 font-secondary">
           
-          {/* First Level Language Selector Row */}
+          {/* Language Selector Row */}
           <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-xl flex items-center justify-between">
             <span className="text-xs font-bold text-slate-700 flex items-center gap-1.5">
               <Globe className="w-4 h-4 text-[#247DE1]" />
@@ -191,16 +191,16 @@ export default function Header() {
             ViatPro 3.0
           </Link>
           <Link href="/servicios/agencia-aduanal" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs font-semibold text-slate-700 pl-4 border-l-2 border-blue-500">
-            Agencia Aduanal
+            {t('srv_customs')}
           </Link>
           <Link href="/servicios/distribucion-y-logistica" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs font-semibold text-slate-700 pl-4 border-l-2 border-blue-500">
-            Distribución y Logística
+            {t('srv_logistics')}
           </Link>
           <Link href="/servicios/reenvio-y-almacenamiento" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs font-semibold text-slate-700 pl-4 border-l-2 border-blue-500">
-            Reenvío y Almacenamiento
+            {t('srv_warehousing')}
           </Link>
           <Link href="/servicios/seguridad-de-envios" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs font-semibold text-slate-700 pl-4 border-l-2 border-blue-500">
-            Seguridad de Envíos
+            {t('srv_security')}
           </Link>
           <Link href="/nosotros" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm font-semibold text-slate-800 border-t border-slate-100">
             {t('nav_company')}

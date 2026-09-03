@@ -4,14 +4,16 @@ import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from '@/i18n/routing';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, type ComponentProps } from 'react';
+
+type LinkHref = ComponentProps<typeof Link>['href'];
 
 export default function ServicesSection() {
   const t = useTranslations('Services');
   const scrollRef = useRef<HTMLDivElement>(null);
 
   // Exact 3 key services on Index page
-  const indexServices = [
+  const indexServices: Array<{ title: string; desc: string; feature: string; img: string; href: LinkHref }> = [
     {
       title: t('s1_title'),
       desc: t('s1_desc'),
@@ -34,6 +36,7 @@ export default function ServicesSection() {
       href: "/servicios/distribucion-y-logistica"
     }
   ];
+
 
   // Auto-play interval for mobile horizontal carousel (advances every 4s)
   useEffect(() => {

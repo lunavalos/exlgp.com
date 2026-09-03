@@ -3,13 +3,16 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { Link } from '@/i18n/routing';
+import type { ComponentProps } from 'react';
+
+type LinkHref = ComponentProps<typeof Link>['href'];
 
 interface ServiceItem {
   title: string;
   desc: string;
   feature: string;
   img: string;
-  href: string;
+  href: LinkHref;
 }
 
 interface ServicesHubClientProps {

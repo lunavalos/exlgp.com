@@ -9,13 +9,17 @@
     "nav_resources": "Recursos",
     "nav_contact": "Contacto",
     "contact_btn": "Contactar",
-    "lang_label": "Idioma / Language"
+    "lang_label": "Idioma / Language",
+    "srv_customs": "Agencia Aduanal",
+    "srv_logistics": "Distribución y Logística",
+    "srv_warehousing": "Reenvío y Almacenamiento",
+    "srv_security": "Seguridad de Envíos"
   },
   "Hero": {
     "badge": "EXL GROUP • CADENA DE SUMINISTRO & PROCESOS ADUANALES",
     "title_l1": "EXL Group: Soluciones de Innovación",
     "title_l2": "en Procesos Aduanales.",
-    "description": "ViatPro es el sistema total integral y automatizado donde agentes aduanales, transportistas y exportadores agilizan sus operaciones en línea de forma intuitiva y segura.",
+    "description": "En EXL Group brindamos soluciones integrales y tecnología avanzada para que agentes aduanales, transportistas y exportadores agilicen sus operaciones de forma intuitiva y segura.",
     "cta_primary": "Explorar Plataforma",
     "cta_secondary": "Contáctanos Ahora",
     "announcement_title": "Automatización Aduanal de Extremo a Extremo",
@@ -507,6 +511,7 @@
     "link_privacy": "Política de Privacidad",
     "link_disclaimer": "Descargo de Responsabilidad",
     "link_ethics": "Código de Ética y Conducta",
-    "rights": "© 2026 EXL Group / ViatPro. Todos los derechos reservados."
+    "rights": "© 2026 EXL Group / ViatPro. Todos los derechos reservados.",
+    "developed_by": "DESARROLLADO POR:"
   }
 }

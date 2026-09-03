@@ -131,26 +131,27 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link href="/servicios/agencia-aduanal" className="hover:text-[#247DE1] transition-colors">
-                    Agencia Aduanal
+                    {tHeader('srv_customs')}
                   </Link>
                 </li>
                 <li>
                   <Link href="/servicios/distribucion-y-logistica" className="hover:text-[#247DE1] transition-colors">
-                    Distribución & Logística
+                    {tHeader('srv_logistics')}
                   </Link>
                 </li>
                 <li>
                   <Link href="/servicios/reenvio-y-almacenamiento" className="hover:text-[#247DE1] transition-colors">
-                    Reenvío WMS
+                    {tHeader('srv_warehousing')}
                   </Link>
                 </li>
                 <li>
                   <Link href="/servicios/seguridad-de-envios" className="hover:text-[#247DE1] transition-colors">
-                    Seguridad de Envíos
+                    {tHeader('srv_security')}
                   </Link>
                 </li>
               </ul>
             </div>
+
 
             {/* Col 3: CONTACTO */}
             <div className="space-y-4">
@@ -190,7 +191,7 @@ export default function Footer() {
           {/* Stacked Lunavalos Credit Logo */}
           <div className="flex flex-col items-center sm:items-end gap-1 shrink-0">
             <span className="text-[10px] font-bold tracking-widest text-slate-300 uppercase">
-              DESARROLLADO POR:
+              {t('developed_by')}
             </span>
             <a 
               href="https://lunavalos.com" 

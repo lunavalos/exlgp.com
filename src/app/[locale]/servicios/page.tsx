@@ -45,37 +45,38 @@ export default function ServicesHubPage() {
       desc: tServices('s1_desc'),
       feature: tServices('s1_feature'),
       img: "/images/viatprotrack.png",
-      href: "/servicios/viatpro"
+      href: "/servicios/viatpro" as const
     },
     {
       title: tServices('s2_title'),
       desc: tServices('s2_desc'),
       feature: tServices('s2_feature'),
       img: "/images/exl-building.jpg",
-      href: "/servicios/agencia-aduanal"
+      href: "/servicios/agencia-aduanal" as const
     },
     {
       title: tServices('s3_title'),
       desc: tServices('s3_desc'),
       feature: tServices('s3_feature'),
       img: "/images/distribucion-y-logistica.jpg",
-      href: "/servicios/distribucion-y-logistica"
+      href: "/servicios/distribucion-y-logistica" as const
     },
     {
       title: tServices('s4_title'),
       desc: tServices('s4_desc'),
       feature: tServices('s4_feature'),
       img: "/images/reenvioyalmacenamiento.jpg",
-      href: "/servicios/reenvio-y-almacenamiento"
+      href: "/servicios/reenvio-y-almacenamiento" as const
     },
     {
       title: tServices('s5_title'),
       desc: tServices('s5_desc'),
       feature: tServices('s5_feature'),
       img: "/images/srvc-mineria.jpg",
-      href: "/servicios/seguridad-de-envios"
+      href: "/servicios/seguridad-de-envios" as const
     }
   ];
+
 
   return (
     <main className="min-h-screen bg-white text-slate-800 flex flex-col font-secondary">
