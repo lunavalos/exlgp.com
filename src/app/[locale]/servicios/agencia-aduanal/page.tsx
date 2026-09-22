@@ -4,7 +4,6 @@ import Footer from '@/components/Footer';
 import AgenciaAduanalClient from './AgenciaAduanalClient';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
-import { FileCheck, Shield, CheckCircle, Search, FileText, BarChart3, RefreshCw, Layers, CheckSquare } from 'lucide-react';
 
 export async function generateMetadata({
   params

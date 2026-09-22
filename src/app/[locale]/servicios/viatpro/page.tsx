@@ -4,12 +4,6 @@ import Footer from '@/components/Footer';
 import ViatProServiceClient from './ViatProServiceClient';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
-import { 
-  FileText, Bell, Truck, ShieldCheck, CheckCircle2, 
-  Users, Navigation, MapPin, 
-  AlertTriangle, Warehouse, Camera, 
-  BarChart2
-} from 'lucide-react';
 
 export async function generateMetadata({
   params

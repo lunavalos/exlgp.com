@@ -4,7 +4,6 @@ import Footer from '@/components/Footer';
 import ReenvioAlmacenamientoClient from './ReenvioAlmacenamientoClient';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
-import { Warehouse, ArrowDownToDot, RefreshCw, Layers, ShieldCheck, ThermometerSnowflake, FileSpreadsheet, PackageCheck } from 'lucide-react';
 
 export async function generateMetadata({
   params

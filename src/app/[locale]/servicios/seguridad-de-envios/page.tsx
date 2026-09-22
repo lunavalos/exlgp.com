@@ -4,8 +4,6 @@ import Footer from '@/components/Footer';
 import SeguridadEnviosClient from './SeguridadEnviosClient';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
-import { ShieldAlert, ShieldCheck, Eye, Lock, Smartphone, Video, KeyRound, Radio } from 'lucide-react';
-import { Link } from '@/i18n/routing';
 
 export async function generateMetadata({
   params

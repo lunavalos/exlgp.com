@@ -58,6 +58,7 @@
     "card3_title": "ViatPro Platform",
     "card3_desc": "100% Secure Cloud System",
     "card4_eyebrow": "CROSS-BORDER LOGISTICS",
+    "card4_desc": "Complete traceability in bonded warehouses and US - MX border crossings.",
     "card4_title": "Complete traceability in bonded warehouses and US - MX border crossings."
   },
   "Services": {
@@ -98,6 +99,13 @@
     "hero_title": "Cloud Customs Technology",
     "hero_highlight": "ViatPro 3.0",
     "hero_subtitle": "The comprehensive platform connecting customs brokers, carriers, and exporters with complete visibility, traceability, and automation.",
+    "single_screen_eyebrow": "CLOUD TECHNOLOGY",
+    "single_screen_title": "Single-Screen Visibility",
+    "single_screen_desc": "ViatPro allows the entire supply chain process to be visible on a single screen, resulting in a direct increase in operational efficiency and ease of use for logistics coordinators.",
+    "edi_title": "E.D.I. Connectivity",
+    "edi_desc": "Electronic data interchange for tracking and billing.",
+    "profiles_title": "Custom Profiles",
+    "profiles_desc": "Tailored access by user role and organization.",
     "flow_eyebrow": "AUTOMATED OPERATIONAL WORKFLOW",
     "flow_title": "How Does",
     "flow_highlight": "ViatPro Work?",

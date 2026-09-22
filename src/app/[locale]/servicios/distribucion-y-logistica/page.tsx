@@ -4,7 +4,6 @@ import Footer from '@/components/Footer';
 import DistribucionLogisticaClient from './DistribucionLogisticaClient';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
-import { Truck, Navigation, Route, Lock, ShieldCheck, Eye, ShieldAlert, Cpu } from 'lucide-react';
 
 export async function generateMetadata({
   params

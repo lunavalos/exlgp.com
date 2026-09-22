@@ -58,9 +58,11 @@
     "card3_title": "Plataforma ViatPro",
     "card3_desc": "Sistema 100% Seguro en la Nube",
     "card4_eyebrow": "LOGÍSTICA TRANSFRONTERIZA",
-    "card4_desc": "Trazabilidad completa en depósitos fiscales y cruces fronterizos MX - EE.UU."
+    "card4_desc": "Trazabilidad completa en depósitos fiscales y cruces fronterizos MX - EE.UU.",
+    "card4_title": "Trazabilidad completa en depósitos fiscales y cruces fronterizos MX - EE.UU."
   },
   "Services": {
+    "category": "SERVICIOS OFICIALES",
     "title": "Nuestros Servicios",
     "highlight": "Oficiales",
     "subtitle": "Soluciones comprobadas e integrales de la empresa para la cadena de suministro y comercio exterior.",

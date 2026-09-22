@@ -1,7 +1,7 @@
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages, getTranslations} from 'next-intl/server';
 import {notFound} from 'next/navigation';
-import {routing} from '@/i18n/routing';
+import {routing, type Locale} from '@/i18n/routing';
 import {Montserrat, Roboto} from 'next/font/google';
 import '../globals.css';
 
@@ -90,7 +90,7 @@ export default async function LocaleLayout({
 }) {
   const {locale} = await params;
 
-  if (!routing.locales.includes(locale as any)) {
+  if (!routing.locales.includes(locale as Locale)) {
     notFound();
   }
 

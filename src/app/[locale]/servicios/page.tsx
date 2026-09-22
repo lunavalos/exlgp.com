@@ -41,13 +41,6 @@ export default function ServicesHubPage() {
 
   const allServices = [
     {
-      title: tServices('s1_title'),
-      desc: tServices('s1_desc'),
-      feature: tServices('s1_feature'),
-      img: "/images/viatprotrack.png",
-      href: "/servicios/viatpro" as const
-    },
-    {
       title: tServices('s2_title'),
       desc: tServices('s2_desc'),
       feature: tServices('s2_feature'),
@@ -74,6 +67,14 @@ export default function ServicesHubPage() {
       feature: tServices('s5_feature'),
       img: "/images/srvc-mineria.jpg",
       href: "/servicios/seguridad-de-envios" as const
+    },
+    {
+      title: tServices('s1_title'),
+      desc: tServices('s1_desc'),
+      feature: tServices('s1_feature'),
+      img: "/images/viatprotrack.png",
+      href: "/servicios/viatpro" as const,
+      isWide: true
     }
   ];
 
